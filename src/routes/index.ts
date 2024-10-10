@@ -5,9 +5,24 @@ import { request } from 'http'
 const router = Router()
 
 router.get('/',(req: Request, res: Response) =>{
-    res.send("Aqui é a home do site")
+    let user = {
+        name: 'Fulano',
+        age: 25
+    }
+
+    res.render('home',{
+        user
+
+    })
+})
+router.get('/contatos',(req: Request, res: Response) =>{
+    res.render('contatos')
+})
+router.get('/sobre',(req: Request, res: Response) =>{
+    res.render('sobre')
 })
 
+/*
 //quando usamos middleware, colocamos next
 const interferir:RequestHandler = (req : Request,res:Response, next) => {
     //console.log("PASSOU PELO MIDDLEWARE")
@@ -45,7 +60,7 @@ router.get('/voo/:origem-:destino',(req: Request,res: Response)=>{
     res.send(`Procurando voos de ${origem} até ${destino}`)
 })
 
-
+*/
 
 
 export default router
