@@ -1,0 +1,17 @@
+{{>partials/header}}    
+<body>
+
+<section>
+    <p>Aqui é o contato do site</p>
+</section>
+{{#mostrarIdade}}
+    Você é maior de idade,com {{idade}} anos.
+{{/mostrarIdade}}
+
+{{^mostrarIdade}}
+    Você é menor de idade, com {{idade}} anos.
+{{/mostrarIdade}}
+
+{{>partials/footer}}
+
+</body>

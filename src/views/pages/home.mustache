@@ -1,0 +1,33 @@
+{{>partials/header}}
+<body>
+
+<section>
+    <p>Aqui é o conteudo do site</p>
+    {{#aparecerMensagem}}
+        <p> Opa, {{name}} {{sobrenome}} seja bem vindo!</p>
+    {{/aparecerMensagem}}
+
+    {{#produtos}}
+    <ul>
+         <li>{{titulo}} - R$ {{preco}}</li>
+    </ul>
+   
+    {{/produtos}}
+    <ul>
+        {{#frases}}
+        <li>{{.}}</li>
+        {{/frases}}
+    </ul>
+
+    {{^frases}}
+        Não temos frases motivacionais hoje
+    {{/frases}}
+ 
+
+
+</section>
+
+{{>partials/footer}}
+
+
+</body>

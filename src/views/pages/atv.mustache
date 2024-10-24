@@ -1,0 +1,28 @@
+<h2>Qual seu nome</h2>
+    <form method="GET">
+    <input type="text" name="nome" placeholder= "digite seu nome">
+
+<h2>Qual sua idade:</h2>
+    <input type="text" name="idade" placeholder= "digite sua idade">
+
+<h2>Qual seu telefone</h2>
+    <input type="number" name="telefone" placeholder= "digite seu telefone">
+    
+<h2>Qual seu endereço</h2>
+    <input type="text" name="endereco" placeholder= "digite seu endereço">
+
+    <p><input type="submit" value="Enviar"></p>
+    </form>
+
+{{#nome}}
+{{#idade}}
+{{#telefone}}
+{{#endereco}}
+
+    Opa {{nome}}, você tem {{idade}} anos, mora no {{endereco}} e seu telefone é {{telefone}}
+
+{{/endereco}}
+{{/telefone}}
+{{/idade}}
+{{/nome}}
+    

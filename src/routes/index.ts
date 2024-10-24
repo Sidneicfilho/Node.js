@@ -1,26 +1,34 @@
 import { Router, Request, Response, response, RequestHandler } from 'express'
-import { request } from 'http'
+import * as HomeController from '../controllers/homeController'
+import * as InfoControllers from '../controllers/infoController'
+import * as UserControllers from '../controllers/userController'
+
 
 
 const router = Router()
 
-router.get('/',(req: Request, res: Response) =>{
-    let user = {
-        name: 'Fulano',
-        age: 25
-    }
 
-    res.render('home',{
-        user
+//ROTA HOME
+router.get('/',HomeController.home)
 
-    })
-})
-router.get('/contatos',(req: Request, res: Response) =>{
-    res.render('contatos')
-})
-router.get('/sobre',(req: Request, res: Response) =>{
-    res.render('sobre')
-})
+router.get('/contatos',InfoControllers.contato)
+
+router.get('/sobre',InfoControllers.sobre)
+
+router.get('/nome',UserControllers.nome)
+
+router.get('/atv',UserControllers.atv)
+
+router.get('/idade',UserControllers.idade)
+
+router.post('/idade-resultado',UserControllers.ResultadoIdade)
+
+router.get('/cadastro',UserControllers.cadastro)
+
+router.post('/cadastro-resultado',UserControllers.resultado)
+
+
+
 
 /*
 //quando usamos middleware, colocamos next
